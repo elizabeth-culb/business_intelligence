@@ -13,4 +13,5 @@ Phase 3: Exploratory Data Mining
 * Git
 * GitHub
 * R
+* RStudio
 
