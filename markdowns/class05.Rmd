@@ -1,0 +1,69 @@
+---
+title: "class05"
+author: "Elizabeth Culbertson"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    numbered_sections: true
+    code_folding: show
+    code_download: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Game: 01 Find your seat
+```{r game01}
+campus = jsonlite::fromJSON("https://isa401-find-your-seat.vercel.app/campus.json")
+
+dplyr::glimpse(campus)
+
+fsb = campus [['Farmer']]
+fsb$code
+```
+
+```
+sec_floor = fsb$floors[["2"]]
+sec_floor$sections
+
+# equivalent: fsb$floors[[3]]$sections
+
+df = sec_floor$rooms
+df
+df[6, 2]
+# equivalent: sec_floor$rooms
+
+```
+## Reading the Excel File
+
+``` {r read_excel}
+occupation = readxl::read_excel(
+  path = "M:/isa401/data/occupation.xlsx", sheet = "Table 1.4", skip = 1
+  )
+
+# optional: clean the bottom three rows
+occupation = occupation[-c(32, 33, 34), ] # delete three specific rows, keep all columns
+```
+
+
+
+## JSON Data
+
+```{r json_data}
+json_url = "https://data.cincinnati-oh.gov/"
+  "resource/rvmt-pkmq.json?$limit=100"
+
+
+
+```
+
+## VPN Breach Data
+
+``` {r game02}
+logins = readr::read_csv("M:/isa401/data/stage1.csv")
+log = jsonlite::fromJSON("https://isa401-import-heist.vercel.app/api/stage2?key=ACCOUNT")
+
+
