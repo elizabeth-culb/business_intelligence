@@ -1,0 +1,33 @@
+---
+title: "hw04"
+output: html_document
+date: "2026-10-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+con = DBI::dbConnect(RSQLite::SQLite(), "data/midwest_airbnb.db")
+listings = DBI::dbReadTable(con, "listings")
+
+# Question 1
+nrow(listings)
+
+# Question 2
+sum(listings$city == "Columbus", na.rm = TRUE)
+
+# Question 3
+chicago <- listings[listings$city == "Chicago", ]
+max(chicago$price, na.rm = TRUE)
+chicago[chicago$price == max(chicago$price, na.rm = TRUE), "name"]
+
+# Question 4
+chicago <- listings[listings$city == "Chicago", ]
+length(unique(chicago$neighbourhood))
+
+# Question 5
+sum(listings$host_is_superhost == "t", na.rm = TRUE)
+
+# Question 6
+sum(listings$price > 1000, na.rm = TRUE)
