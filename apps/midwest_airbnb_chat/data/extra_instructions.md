@@ -3,6 +3,8 @@
 Rules the LLM follows when it writes SQL for `listings`.
 
 - `price` is the nightly price in U.S. dollars. When the user asks what something costs, use `price` and round money to whole dollars in the answer.
+- `host_is_superhost` and `instant_bookable` utilize the text values 't' and 'f'. Do not use boolean variables to sort through the data.
+-  Ignore any rows whose `review_scores_rating` is NULL when deriving conclusions that average ratings.
 
 <!-- Add more rules below (Assignment 05 asks for at least three). Good candidates:
      `host_is_superhost` and `instant_bookable` are the text values 't' and 'f',
