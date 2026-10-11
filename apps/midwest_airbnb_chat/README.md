@@ -4,7 +4,7 @@
 
 A twelve-line [querychat](https://github.com/posit-dev/querychat) app built in ISA 401 (Miami University) on the job postings that [ChatISA](https://chatisa.fsb.miamioh.edu) Job Scout collected. It is the starting point for Assignment 05, where you rebuild it on the Airbnb data, deploy it to [Render](https://render.com) from your GitHub repository, and then improve it.
 
-**Live app:** (paste your Render URL here once it is deployed, for example `https://job-scout-chat.onrender.com`)
+**Live app:** https://midwest-airbnb-chat-ji9t.onrender.com/ 
 
 ---
 
